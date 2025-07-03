@@ -9,7 +9,7 @@ st.set_page_config(page_title="📨 Spam Classifier", layout="centered")
 st.title("📨 Email Spam Classifier")
 
 # === LOAD TRAINED MODEL ===
-MODEL_FILE = "spam_classifier_RD.pkl"
+MODEL_FILE = "spam_regression.pkl"
 
 
 @st.cache_resource
@@ -22,7 +22,7 @@ def load_model():
 model = load_model()
 
 if model is None:
-    st.error("❌ Model file not found. Please ensure 'spam_classifier_RD.pkl' exists.")
+    st.error("❌ Model file not found. Please ensure 'spam_regression.pkl' exists.")
     st.stop()
 
 # === USER INPUT ===

@@ -11,6 +11,12 @@ st.title("📨 Email Spam Classifier")
 # === LOAD TRAINED MODEL ===
 MODEL_FILE = "spam_classifier_model.pkl"
 
+if not os.path.exists(MODEL_FILE):
+    st.error("❌ Model file not found. Please ensure 'spam_classifier_model.pkl' exists.")
+    st.stop()
+
+model = joblib.load(MODEL_FILE)
+
 @st.cache_resource
 def load_model():
     if os.path.exists(MODEL_FILE):

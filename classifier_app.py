@@ -9,10 +9,10 @@ st.set_page_config(page_title="📨 Spam Classifier", layout="centered")
 st.title("📨 Email Spam Classifier")
 
 # === LOAD TRAINED MODEL ===
-MODEL_FILE = "spam_classifier_model.pkl"
+MODEL_FILE = "spam_classifier_RD.pkl"
 
 if not os.path.exists(MODEL_FILE):
-    st.error("❌ Model file not found. Please ensure 'spam_classifier_model.pkl' exists.")
+    st.error("❌ Model file not found. Please ensure 'spam_classifier_RD.pkl' exists.")
     st.stop()
 
 model = joblib.load(MODEL_FILE)
@@ -27,7 +27,7 @@ def load_model():
 model = load_model()
 
 if model is None:
-    st.error("❌ Model file not found. Please ensure 'spam_classifier_model.pkl' exists.")
+    st.error("❌ Model file not found. Please ensure 'spam_classifier_RD.pkl' exists.")
     st.stop()
 
 # === USER INPUT ===
